@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="htmlTag">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محول العملات العالمي الذكي</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand" id="navTitle">💱 المحول العالمي</div>
+            <div class="nav-controls">
+                <select id="langSelect" onchange="changeLanguage()">
+                    <option value="ar" selected>العربية</option>
+                    <option value="en">English</option>
+                </select>
+                <button id="themeToggle" onclick="toggleTheme()" title="تغيير المظهر">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 id="mainTitle">💱 المحول الذكي المرن</h1>
+        <p class="subtitle" id="subTitle">حوّل بين العملات</p>
+
+        <div class="form-group">
+            <label for="amount" id="labelAmount">المبلغ:</label>
+            <input type="number" id="amount" placeholder="أدخل المبلغ هنا" value="100">
+        </div>
+
+        <div class="flex-container">
+            <div class="flex-child">
+                <label for="fromCurrency" id="labelFrom">من:</label>
+                <select id="fromCurrency">
+                    <option value="SAR" selected>🇸🇦 ريال سعودي (SAR)</option>
+                    <option value="USD">🇺🇸 دولار أمريكي (USD)</option>
+                    <option value="EUR">🇪🇺 يورو (EUR)</option>
+                    <option value="GBP">🇬🇧 جنيه إسترليني (GBP)</option>
+                    <option value="JPY">🇯🇵 ين ياباني (JPY)</option>
+                    <option value="CAD">🇨🇦 دولار كندي (CAD)</option>
+                    <option value="AUD">🇦🇺 دولار أسترالي (AUD)</option>
+                    <option value="CHF">🇨🇭 فرنك سويسري (CHF)</option>
+                    <option value="CNY">🇨🇳 يوان صيني (CNY)</option>
+                    <option value="AED">🇦🇪 درهم إماراتي (AED)</option>
+                    <option value="KWD">🇰🇼 دينار كويتي (KWD)</option>
+                    <option value="QAR">🇶🇦 ريال قطري (QAR)</option>
+                    <option value="OMR">🇴🇲 ريال عماني (OMR)</option>
+                    <option value="BHD">🇧🇭 دينار بحريني (BHD)</option>
+                    <option value="INR">🇮🇳 روبية هندية (INR)</option>
+                </select>
+            </div>
+
+            <button id="swapBtn" onclick="swapCurrencies()" title="عكس العملات">🔄</button>
+
+            <div class="flex-child">
+                <label for="toCurrency" id="labelTo">إلى:</label>
+                <select id="toCurrency">
+                    <option value="USD" selected>🇺🇸 دولار أمريكي (USD)</option>
+                    <option value="SAR">🇸🇦 ريال سعودي (SAR)</option>
+                    <option value="EUR">🇪🇺 يورو (EUR)</option>
+                    <option value="GBP">🇬🇧 جنيه إسترليني (GBP)</option>
+                    <option value="JPY">🇯🇵 ين ياباني (JPY)</option>
+                    <option value="CAD">🇨🇦 دولار كندي (CAD)</option>
+                    <option value="AUD">🇦🇺 دولار أسترالي (AUD)</option>
+                    <option value="CHF">🇨🇭 فرنك سويسري (CHF)</option>
+                    <option value="CNY">🇨🇳 يوان صيني (CNY)</option>
+                    <option value="AED">🇦🇪 درهم إماراتي (AED)</option>
+                    <option value="KWD">🇰🇼 دينار كويتي (KWD)</option>
+                    <option value="QAR">🇶🇦 ريال قطري (QAR)</option>
+                    <option value="OMR">🇴🇲 ريال عماني (OMR)</option>
+                    <option value="BHD">🇧🇭 دينار بحريني (BHD)</option>
+                    <option value="INR">🇮🇳 روبية هندية (INR)</option>
+                </select>
+            </div>
+        </div>
+
+        <button id="convertBtn" onclick="performConversion()">احسب التحويل الآن</button>
+
+        <div class="result-box">
+            <p class="result-text" id="finalResult">النتيجة ستظهر هنا.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
